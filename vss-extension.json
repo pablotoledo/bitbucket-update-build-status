@@ -1,0 +1,36 @@
+{
+    "manifestVersion": 1,
+    "id": "bitbucket-commit-status",
+    "name": "Bitbucket Server Commit Status",
+    "version": "0.0.1",
+    "publisher": "pablotoledo",
+    "targets": [
+        {
+            "id": "Microsoft.VisualStudio.Services"
+        }
+    ],    
+    "description": "This task allow you to send the status of your build to Bitbucket",
+    "categories": [
+        "Azure Pipelines"
+    ],
+    "icons": {
+        "default": "images/icono.png"        
+    },
+    "files": [
+        {
+            "path": "bbplugin"
+        }
+    ],
+    "contributions": [
+        {
+            "id": "bitbucket-commit-status-task",
+            "type": "ms.vss-distributed-task.task",
+            "targets": [
+                "ms.vss-distributed-task.tasks"
+            ],
+            "properties": {
+                "name": "bbplugin"
+            }
+        }
+    ]
+}
