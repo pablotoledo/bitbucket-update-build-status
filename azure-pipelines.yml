@@ -29,5 +29,5 @@ stages:
             inputs:
               targetType: "inline"
               script: |
-                cd TaskDirectory # Update to the name of the directory of your task
+                cd bbplugin
                 tsc
