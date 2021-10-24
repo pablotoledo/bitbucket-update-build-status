@@ -2,14 +2,15 @@
     "manifestVersion": 1,
     "id": "bitbucket-commit-status",
     "name": "Bitbucket Server Commit Status",
-    "version": "0.0.1",
+    "version": "0.1.0",
     "publisher": "pablotoledo",
+    "public": true,
     "targets": [
         {
             "id": "Microsoft.VisualStudio.Services"
         }
     ],    
-    "description": "This task allow you to send the status of your build to Bitbucket",
+    "description": "This plugin allow you to send the status of your build to Bitbucket",
     "categories": [
         "Azure Pipelines"
     ],
@@ -32,5 +33,14 @@
                 "name": "bbplugin"
             }
         }
-    ]
+    ],
+    "repository": {
+        "type": "git",
+        "uri": "https://github.com/pablotoledo/bitbucket-update-build-status/"
+    },
+    "content": {
+        "details": {
+            "path": "readme.md"
+        }
+    }
 }
