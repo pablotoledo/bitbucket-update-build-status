@@ -10,7 +10,6 @@ pr:
 pool:
   vmImage: "ubuntu-latest"
 
-
 stages:
   - stage: Run_and_publish_unit_tests
     jobs:
