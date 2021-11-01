@@ -38,7 +38,7 @@ stages:
               targetType: "inline"
               script: |
                 npx tfx-cli extension create
-                versionString=$(node -p "require('./vss-extension.json').version)
+                versionString=$(node -p "require('./vss-extension.json').version")
                 echo "##vso[build.updatebuildnumber]$versionString"
           - task: CopyFiles@2
             inputs:
