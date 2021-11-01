@@ -42,7 +42,7 @@ stages:
                 echo "##vso[build.updatebuildnumber]$versionString"
           - task: CopyFiles@2
             inputs:
-              contents: 'pablotoledo.bitbucket-commit-status-$(build.updatebuildnumber).vsix'
+              contents: 'pablotoledo.bitbucket-commit-status-*.vsix'
               targetFolder: ./publish
           - task: PublishPipelineArtifact@1
             inputs:
