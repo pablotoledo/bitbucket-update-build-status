@@ -38,11 +38,13 @@ stages:
               targetType: "inline"
               script: |
                 npx tfx-cli extension create
+                versionString=$(node -p "require('./vss-extension.json').version)
+                echo "##vso[build.updatebuildnumber]$versionString"
           - task: CopyFiles@2
             inputs:
-              contents: 'pablotoledo.bitbucket-commit-status*.vsix'
+              contents: 'pablotoledo.bitbucket-commit-status-$(build.updatebuildnumber).vsix'
               targetFolder: ./publish
-          - task: PublishBuildArtifacts@1
+          - task: PublishPipelineArtifact@1
             inputs:
-              pathToPublish: ./publish
-              artifactName: MyBuildOutputs
+              targetPath: ./publish
+              artifactName: pablotoledo.bitbucket-commit-status-$(build.updatebuildnumber)
