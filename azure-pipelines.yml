@@ -32,3 +32,19 @@ stages:
               script: |
                 cd bbplugin
                 tsc
+          - task: Bash@3
+            displayName: Create artifact
+            inputs:
+              targetType: "inline"
+              script: |
+                npx tfx-cli extension create
+                versionString=$(node -p "require('./vss-extension.json').version")
+                echo "##vso[build.updatebuildnumber]$versionString"
+          - task: CopyFiles@2
+            inputs:
+              contents: 'pablotoledo.bitbucket-commit-status-*.vsix'
+              targetFolder: ./publish
+          - task: PublishPipelineArtifact@1
+            inputs:
+              targetPath: ./publish
+              artifactName: pablotoledo.bitbucket-commit-status-$(build.updatebuildnumber)
