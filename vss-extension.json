@@ -2,7 +2,7 @@
     "manifestVersion": 1,
     "id": "bitbucket-commit-status",
     "name": "Bitbucket Server Commit Status",
-    "version": "0.1.0",
+    "version": "0.1.1",
     "publisher": "pablotoledo",
     "public": true,
     "targets": [
